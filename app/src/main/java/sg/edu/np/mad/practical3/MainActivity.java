@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
-    User u;
+    User user;
     private static final String TAG = "Main Activity";
     private TextView maintext;
     @Override
@@ -27,22 +27,22 @@ public class MainActivity extends AppCompatActivity {
         String randomno = receivedData.getStringExtra(("Random"));
 
 
-        u = new User();
-        u.name = "MAD " + randomno;
-        u.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua";
-        u.id = 1;
-        u.followed = false;
+        user = new User();
+        user.name = "MAD " + randomno;
+        user.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua";
+        user.id = 1;
+        user.followed = false;
 
         TextView name = findViewById(R.id.txtName);
-        name.setText(u.name);
+        name.setText(user.name);
         TextView description = findViewById(R.id.txtDescription);
-        description.setText(u.description);
+        description.setText(user.description);
         setFollowBtn();
     }
 
     private void setFollowBtn() {
         Button b = findViewById(R.id.btnFollow);
-        if(u.followed) {
+        if(user.followed) {
             b.setText("Unfollow");
         }
         else {
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void onFollowClick(View v) {
-        u.followed = !u.followed;
+        user.followed = !user.followed;
         setFollowBtn();
     }
 
