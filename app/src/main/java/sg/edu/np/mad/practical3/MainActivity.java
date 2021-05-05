@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
-    User user;
+    private User user;
     private static final String TAG = "Main Activity";
     private TextView maintext;
     @Override
