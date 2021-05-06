@@ -2,6 +2,7 @@ package sg.edu.np.mad.practical3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -44,9 +45,22 @@ public class MainActivity extends AppCompatActivity {
         Button b = findViewById(R.id.btnFollow);
         if(user.followed) {
             b.setText("Unfollow");
+            Context context = getApplicationContext();
+            CharSequence text = "Unfollowed";
+            int duration = Toast.LENGTH_SHORT;
+
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
         }
         else {
             b.setText("Follow");
+
+            Context context = getApplicationContext();
+            CharSequence text = "Followed";
+            int duration = Toast.LENGTH_SHORT;
+
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
         }
     }
     public void onFollowClick(View v) {
