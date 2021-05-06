@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
-    private User user;
+    public User user;
     private static final String TAG = "Main Activity";
     private TextView maintext;
     @Override
